@@ -1,0 +1,23 @@
+{
+  "name": "itemshop",
+  "version": "1.0.0",
+  "description": "Item shop MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "mean",
+    "start": "node app"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "^1.8.2"
+  },
+  "author": "Israel Briggs",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.3.1"
+  }
+}
