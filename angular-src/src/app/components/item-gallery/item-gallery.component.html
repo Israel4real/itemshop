@@ -1,0 +1,46 @@
+<div>
+
+
+  <!-- display header  -->
+  <div *ngIf="selectedItem">
+    <h2>{{ selectedItem.name }} </h2>
+  </div>
+
+  <!-- display -->
+  <div>
+    <p>img</p>
+  </div>
+
+
+  <!-- Shopping header -->
+  <div>
+    <ul>
+      <li>cat #</li>
+      <li>cat #</li>
+      <li>cat #</li>
+    </ul>
+  </div>
+
+  <!-- Shopping grid -->
+  <div class="pure-g" style="border: 1px solid black" >
+    <div class="pure-u-1-5" *ngFor="let item of items" (click)="onSelect(item)">
+      <p>{{ item.name }}</p>
+      <p>{{ item.description }}</p>
+      <p>{{ item.category }}</p>
+    </div>
+  </div>
+
+  <div>
+    <button>left</button>
+    <button>right</button>
+  </div>
+
+</div>
+
+<!-- *********************************** -->
+<div>
+  <button (click)="testClick()" >click</button>
+</div>
+<div>
+  <a [routerLink]="['/add-item']">Add Item</a>
+</div>
