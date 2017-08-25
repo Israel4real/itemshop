@@ -17,6 +17,11 @@ export class ItemService {
     return this.http.get('http://localhost:8080/items/list')
       .map(res => res.json());
   }
+  
+  // removeItem(item){
+  //   return this.http.delete('http://localhost:8080/items/remove', item)
+  //     .map(res => res.json());
+  // }
 
 
 }

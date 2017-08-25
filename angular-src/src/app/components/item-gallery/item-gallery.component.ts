@@ -10,7 +10,6 @@ export class ItemGalleryComponent implements OnInit {
   items: any;
   selectedItem: any;
 
-
   constructor(
     private itemService: ItemService
     ) { }
@@ -33,5 +32,9 @@ export class ItemGalleryComponent implements OnInit {
     this.selectedItem = item;
     
   }
+
+  // removeItem(item){
+  //    this.itemService.removeItem(item).subscribe(item =>)
+  // }
 
 }

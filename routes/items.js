@@ -29,5 +29,10 @@ router.get('/list', function(req, res, next){
   });
 });
 
+//Delete item
+// router.delete('/remove', function(req, res, next){
+  
+// });
+
 
 module.exports = router;

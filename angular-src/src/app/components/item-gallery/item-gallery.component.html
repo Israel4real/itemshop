@@ -1,38 +1,43 @@
-<div>
+<div class="pure-g">
 
-
-  <!-- display header  -->
-  <div *ngIf="selectedItem">
-    <h2>{{ selectedItem.name }} </h2>
-  </div>
-
-  <!-- display -->
-  <div>
-    <p>img</p>
-  </div>
-
-
-  <!-- Shopping header -->
-  <div>
-    <ul>
-      <li>cat #</li>
-      <li>cat #</li>
-      <li>cat #</li>
-    </ul>
-  </div>
-
-  <!-- Shopping grid -->
-  <div class="pure-g" style="border: 1px solid black" >
-    <div class="pure-u-1-5" *ngFor="let item of items" (click)="onSelect(item)">
-      <p>{{ item.name }}</p>
-      <p>{{ item.description }}</p>
-      <p>{{ item.category }}</p>
+  <div class="pure-u-1-2">
+    <!-- display header  -->
+    <div *ngIf="selectedItem">
+      <h2>{{ selectedItem.name }} </h2>
     </div>
+
+    <!-- display -->
+    <div>
+      <img src="https://placekitten.com/g/400/300">
+      <p>{{ selectedItem.description }}</p>
+    </div>
+
   </div>
 
-  <div>
-    <button>left</button>
-    <button>right</button>
+  <div class="pure-u-1-2">
+    <!-- Shopping header -->
+    <div>
+      <ul class="gallery-nav">
+        <button>Consumables</button>
+        <button>Equipment</button>
+        <button>Costumes</button>
+      </ul>
+    </div>
+
+    <!-- Shopping grid -->
+    <div class="pure-g" style="border: 1px solid black; height: 320px" >
+      <div class="pure-u-1-5" *ngFor="let item of items" (click)="onSelect(item)">
+        <p>{{ item.name }}</p>
+        <p>{{ item.price }}</p>
+        <p>{{ item.category }}</p>
+      </div>
+    </div>
+
+    <div>
+      <button>left</button>
+      <button>right</button>
+    </div>
+
   </div>
 
 </div>

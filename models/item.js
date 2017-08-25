@@ -31,6 +31,10 @@ module.exports.getItemById = function(id, callback){
   Item.findById(id, callback);
 }
 
+module.exports.deleteItemById = function(id, callback){
+  Item.findByIdAndRemove(id, callback);
+}
+
 module.exports.getItemByItemName = function(itemName, callback){
   const query = {name: itemName}
   Item.findOne(query, callback);
@@ -39,4 +43,5 @@ module.exports.getItemByItemName = function(itemName, callback){
 module.exports.addItem = function(newItem, callback){
   newItem.save(callback);
 }
+
 
