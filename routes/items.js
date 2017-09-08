@@ -10,12 +10,13 @@ router.post('/create', function(req, res, next){
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
+    image: req.body.image,
     category: req.body.category
   });
 
   Item.addItem(newItem, function(err, item){
     if (err) {
-      res.json({success: false, msg: 'Failed to add item!'});
+      res.json({success: false, msg: 'Failed to add item! -- ' + err});
     } else {
       res.json({success: true, msg: newItem.name + ' added!'})
     }
@@ -30,9 +31,15 @@ router.get('/list', function(req, res, next){
 });
 
 //Delete item
-// router.delete('/remove', function(req, res, next){
-  
-// });
+router.delete('/remove', function(req, res, next){
+  Item.findByIdAndRemove(id, function(err, item){
+    if (err) {
+      res.json({success: false, msg: 'Failed to delete item!'});
+    } else {
+      res.json({success: true, msg: item.name + ' deleted!'})
+    }
+  }) 
+ });
 
 
 module.exports = router;
